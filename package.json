@@ -5,8 +5,8 @@
   "main": "files.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "server": "nodemon server"
+    "start": "node express-router.js",
+    "server": "nodemon express-router.js"
   },
   "keywords": [],
   "author": "",
