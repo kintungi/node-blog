@@ -3,11 +3,16 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const blogRouter = require("./routes/blog-routes")
 // const Blog = require("./models/blog")
+const serverless = require("serverless-http")
 
 //express app
 const app = express()
 
 const dbURI = "mongodb+srv://francis:test1234@nodetuts.g1ar2.mongodb.net/node-tuts?retryWrites=true&w=majority"
+
+// mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
+// .then(result => app.use("/.netlify/functions/express-router", router))
+// .catch(err => console.log(err))
 
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(result => app.listen(7000))
@@ -46,3 +51,5 @@ app.use((req, res) =>{
     })
 /*You don't need to specify the request url, it is used for all types
 of requests unless specified otherwise*/
+
+// module.exports.handler = serverless(app)
